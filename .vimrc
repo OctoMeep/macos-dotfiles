@@ -15,6 +15,7 @@ set backspace=indent,eol,start
 set transparency=20
 set tabstop=4
 set shiftwidth=4
+set noundofile
 syntax on
 
 filetype off
