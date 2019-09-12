@@ -20,16 +20,16 @@ shift + cmd - k : yabai -m window --warp north
 shift + cmd - l : yabai -m window --warp east
 
 # balance size of windows
-shift + fn - 0 : yabai -m space --balance
+# shift + fn - 0 : yabai -m space --balance
 
 # make floating window fill screen
-shift + fn - up     : yabai -m window --grid 1:1:0:0:1:1
+# shift + fn - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-shift + fn - left   : yabai -m window --grid 1:2:0:0:1:1
+# shift + fn - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + fn - right  : yabai -m window --grid 1:2:1:0:1:1
+# shift + fn - right  : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop, move window and follow focus
 # shift + cmd - n : yabai -m space --create;\
