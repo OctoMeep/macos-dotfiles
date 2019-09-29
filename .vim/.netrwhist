@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/robertweingart/share/IB/IB_ToK'
+let g:netrw_dirhist_2='/Users/robertweingart/share/IB/IB_English_A'
+let g:netrw_dirhist_3='/Users/robertweingart/share/IB/IB_ToK'
+let g:netrw_dirhist_4='/Users/robertweingart/.vim/ftplugin'
+let g:netrw_dirhist_5='/Users/robertweingart/.vim'
+let g:netrw_dirhist_6='/Users/robertweingart/share/IB/IB_English_A'
