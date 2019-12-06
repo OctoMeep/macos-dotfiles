@@ -18,7 +18,15 @@ set backspace=indent,eol,start
 set tabstop=4
 set shiftwidth=4
 set noundofile
+set wildignore+=*.aux,*.bbl,*.bcf,*.blg,*.fdb_latexmk,*.fls,*.run.xml,*.synctex.gz,*.toc
+set mouse=a
+set laststatus=2
+set guifont=SourceCodePro+Powerline+Awesome:h12
 syntax on
+
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -33,10 +41,11 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'rakr/vim-one'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'dense-analysis/ale'
+" Plugin 'Quramy/tsuquyomi'
+" Plugin 'dense-analysis/ale'
 Plugin 'flazz/vim-colorschemes'
-
+Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'neoclide/coc.nvim', {'pinned': 1}
 
 call vundle#end() 
 filetype plugin indent on
@@ -59,4 +68,4 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'] }
 let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
 
-colorscheme one 
+colorscheme gruvbox 

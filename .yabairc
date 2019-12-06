@@ -33,7 +33,7 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  36
+yabai -m config top_padding                  5
 yabai -m config bottom_padding               5
 yabai -m config left_padding                 5
 yabai -m config right_padding                5
@@ -43,7 +43,7 @@ yabai -m rule --add label=firefox app="Firefox" space=2
 yabai -m rule --add label=chromium app="Chromium" space=2
 yabai -m rule --add label=chrome app="Google Chrome" space=2
 yabai -m rule --add label=discord app="Discord" space=3
-yabai -m rule --add label=thunderbird app="thunderbird" space=4
+yabai -m rule --add label=thunderbird app="Thunderbird" space=4
 yabai -m rule --add label=skype app="Skype" space=7
 yabai -m rule --add label=whatsapp app="WhatsApp" space=7
 yabai -m rule --add label=spotify app="Spotify" space=8

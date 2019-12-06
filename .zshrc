@@ -117,6 +117,11 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 alias dotfiles='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias tmux='tmux -2'
+alias vim='vim --servername VIM'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
