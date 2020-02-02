@@ -1,4 +1,4 @@
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
@@ -7,10 +7,11 @@ nnoremap <C-L> <C-W><C-L>
 
 autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.skel
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+autocmd Filetype markdown map <F5> :silent !/usr/local/bin/pandoc "%" --pdf-engine /Library/TeX/texbin/pdflatex -V geometry:margin=1in -o "%:r.pdf" && open -a Skim "%:r.pdf"<CR><bar>:redraw!<CR>
+autocmd Filetype markdown map <F6> :silent !/usr/local/bin/pandoc "%" --pdf-engine /Library/TeX/texbin/pdflatex --toc -V geometry:margin=1in -o "%:r.pdf" && open -a Skim "%:r.pdf"<CR><bar>:redraw!<CR>
 
 set number
 set relativenumber
-set nocompatible
 set background=dark 
 set linebreak
 set encoding=utf-8
@@ -25,31 +26,27 @@ set laststatus=2
 set guifont=SourceCodePro+Powerline+Awesome:h12
 syntax on
 
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'lervag/vimtex'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'rakr/vim-one'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Quramy/tsuquyomi'
-" Plugin 'dense-analysis/ale'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'neoclide/coc.nvim', {'pinned': 1}
+Plug 'VundleVim/Vundle.vim'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'gabrielelana/vim-markdown'
+Plug 'lervag/vimtex'
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'rakr/vim-one'
+Plug 'leafgarland/typescript-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Quramy/tsuquyomi'
+Plug 'dense-analysis/ale'
+Plug 'flazz/vim-colorschemes'
+Plug 'christoomey/vim-tmux-navigator'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'morhetz/gruvbox'
 
-call vundle#end() 
-filetype plugin indent on
+call plug#end() 
 
 " let g:markdown_enable_folding = 1
 let g:markdown_enable_conceal = 1
