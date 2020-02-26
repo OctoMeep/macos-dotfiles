@@ -24,6 +24,7 @@ set wildignore+=*.aux,*.bbl,*.bcf,*.blg,*.fdb_latexmk,*.fls,*.run.xml,*.synctex.
 set mouse=a
 set laststatus=2
 set guifont=SourceCodePro+Powerline+Awesome:h12
+set conceallevel=2
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -45,6 +46,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end() 
 
@@ -66,4 +70,11 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'] }
 let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
 
-colorscheme gruvbox 
+let g:airline_powerline_fonts = 1
+
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+colorscheme brogrammer 
